@@ -70,7 +70,7 @@
         {
             SimpleCam * simpleCam = [SimpleCam new];
             simpleCam.delegate= self;
-            //[simpleCam setDisablePhotoPreview:YES];
+            [simpleCam setDisablePhotoPreview:YES];
 //            UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:simpleCam];
 //            nav.navigationBarHidden = YES;
             [self presentViewController:simpleCam animated:YES completion:nil];
