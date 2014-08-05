@@ -18,7 +18,7 @@
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     
-    [self.window setRootViewController:[[SimpleCam alloc]init]];
+    [self.window setRootViewController:[[RootViewController alloc]init]];
     return YES;
 }
 
