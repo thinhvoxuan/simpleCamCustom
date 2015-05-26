@@ -52,9 +52,26 @@
     [tap addTarget:self action:@selector(handleTap:)];
     [self.view addGestureRecognizer:tap];
     
+//    UISlider *newSlider = [UISlider new];
+//    [newSlider setCenter:self.view.center];
+//    CGSize currentSize = CGSizeMake(17, 17);
+//    UIImage *newThumbImage = [self imageWithImage:[UIImage imageNamed:@"shutter"] scaledToSize:currentSize];
+//    [newSlider setThumbImage:newThumbImage forState:UIControlStateNormal];
+//    [self.view addSubview:newSlider];
+    
+    
 }
 
-- (void) viewWillAppear:(BOOL)animated{
+- (UIImage *)imageWithImage:(UIImage *)image scaledToSize:(CGSize)newSize {
+    //UIGraphicsBeginImageContext(newSize);
+    UIGraphicsBeginImageContextWithOptions(newSize, NO, 0.0);
+    [image drawInRect:CGRectMake(0, 0, newSize.width, newSize.height)];
+    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return newImage;
+}
+
+- (void) viewDidAppear:(BOOL)animated{
 //    [self actionSheet:nil clickedButtonAtIndex:0];
 //    SimpleCam * simpleCam = [SimpleCam new];
 //    simpleCam.delegate= self;
